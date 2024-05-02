@@ -258,7 +258,7 @@ class Flask(App):
         # development). Also, Google App Engine stores static files somewhere
         if self.has_static_folder:
             assert (
-                bool(static_host) == host_matching
+                bool(static_host) != host_matching
             ), "Invalid static_host/host_matching combination"
             # Use a weakref to avoid creating a reference cycle between the app
             # and the view function (see #3761).
